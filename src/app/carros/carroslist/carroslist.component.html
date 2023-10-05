@@ -1,0 +1,18 @@
+<p>carroslist works!</p>
+<table>
+    <tr>
+        <th>Nome:</th>
+        <th>ano:</th>
+    </tr>
+
+    <tr *ngFor="let carros of lista; let i = index">
+        <td *ngIf="carros.ano > 1900">
+            {{carros.ano}}
+            {{carros.nome}}
+        </td>
+        <td *ngIf="carros.ano <1900">
+            {{carros.ano}}
+            {{carros.nome}}
+        </td>
+    </tr>
+</table>

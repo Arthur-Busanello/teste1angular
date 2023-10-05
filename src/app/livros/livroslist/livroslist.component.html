@@ -1,0 +1,15 @@
+<p>livroslist works!</p>
+<table>
+    <tr>
+        <th>Nome:</th>
+        <th>titulo:</th>
+    </tr>
+
+    <tr *ngFor="let livros of lista; let i = index">
+       
+            {{livros.titulo}}
+            {{livros.nome}}
+    
+       
+    </tr>
+</table>
