@@ -1,15 +1,55 @@
 <p>livroslist works!</p>
 <table>
     <tr>
+        <th>id:</th>
         <th>Nome:</th>
         <th>titulo:</th>
     </tr>
 
     <tr *ngFor="let livros of lista; let i = index">
-       
+            {{livros.id}}  
+             {{livros.nome}} 
             {{livros.titulo}}
-            {{livros.nome}}
+           
     
        
     </tr>
 </table>
+
+<button (click)="abrirModal(liv1)" >Novo livro</button>
+<button (click)="abrirModal(liv2)" >editar livros</button>
+
+    <ng-template #liv1 let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Modal title</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+
+       <div class="modal-body">
+		
+        <app-livrosdetails (retorno)="addNaLista($event)" ></app-livrosdetails>
+            
+	</div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+    </ng-template>
+
+
+    <ng-template #liv2 let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Modal title2</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+
+       <div class="modal-body">
+		
+        <app-livrosdetails (retorno)="editNaLista($event)" ></app-livrosdetails>
+            
+	</div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+    </ng-template>

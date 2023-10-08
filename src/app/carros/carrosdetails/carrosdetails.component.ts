@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Carros } from '../carros';
 
@@ -9,11 +9,16 @@ import { Carros } from '../carros';
 })
 export class CarrosdetailsComponent {
   roteador = inject(ActivatedRoute);
-  pessoa!: Carros;
+  carros: Carros = new Carros(0,"",0);
 
-
+  @Output() retorno = new EventEmitter<Carros>();
   constructor(){
     let id = this.roteador.snapshot.paramMap.get('id');
     console.log(id);
+  }
+  salvar(){
+    //banco de dados... back
+    this.retorno.emit(this.carros);
+
   }
 }
