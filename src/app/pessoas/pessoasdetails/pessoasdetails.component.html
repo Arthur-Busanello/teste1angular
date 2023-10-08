@@ -1,1 +1,10 @@
 <p>pessoasdetails works!</p>
+Id:
+<input type="number"[(ngModel)]= "pessoa.id" />
+Nome:
+<input type="text" [(ngModel)] = "pessoa.nome" />
+
+Idade:
+<input type="number" [(ngModel)]= "pessoa.idade" />
+
+<button (click)="salvar()">Salvar</button>
