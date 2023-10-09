@@ -1,0 +1,25 @@
+.header {
+    background-color: #333; // Background color for the header
+    padding: 10px; // Adjust the padding as needed
+    text-align: center; // Center-align the content
+    
+    p {
+      color: white; // Text color for the <p> element
+      font-size: 24px; // Font size for the <p> element
+    }
+  
+    input {
+      margin: 5px 0; // Add margin between the input elements
+      background-color: #007bff; // Background color for the buttons
+      color: white; // Text color for the buttons
+      border: none; // Remove button borders
+      padding: 10px 20px; // Adjust padding as needed
+      cursor: pointer; // Change cursor to a pointer on hover
+      border-radius: 5px; // Add some border-radius for rounded corners
+      font-size: 16px; // Font size for the buttons
+  
+      &:hover {
+        background-color: #0056b3; // Change background color on hover
+      }
+    }
+  }
